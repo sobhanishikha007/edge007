@@ -6,29 +6,65 @@ main .hero-container {
   padding: 0;
 }
 
-.hero {
+main .hero {
   position: relative;
   padding: 32px;
   min-height: 300px;
+  color: var(--background-color);
 }
 
-.hero h1 {
+main .hero .hero-body {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  color: white;
+  position: relative;
+  z-index: 1;
 }
-
-.hero picture {
+main .hero picture {
   position: absolute;
-  z-index: -1;
-  inset: 0;
-  object-fit: cover;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
   box-sizing: border-box;
 }
 
-.hero img {
+main .hero img {
   object-fit: cover;
   width: 100%;
   height: 100%;
+
+  /* add */
+  position: relative;
+  z-index: -1;
+}
+
+.hero [data-align="center"] {
+  text-align: center;
+}
+
+/* add separator */
+main .hero .content .separator {
+  width: 128px;
+  height: 5px;
+  display: block;
+  content: "";
+  background-color: #ffc719;
+  transition: width .4s ease-in-out;
+  margin: auto;
+}
+
+main .hero .content {
+  text-align: center;
+  max-width: 1200px;
+  position: absolute;
+  color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+main .hero {
+  min-height: 300px;
+  height: 100vh;
 }
