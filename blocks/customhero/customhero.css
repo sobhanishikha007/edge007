@@ -98,11 +98,16 @@
     height: 44px;
 }
 
+.hero-box-card-text {
+    padding-left: 10px;
+}
+
 .hero-box-card-text p {
     margin: 0;
     font-weight: bold;
     color: #14847f;
     font-size: 24px;
+    line-height: 1.2;
 }
 
 .hero-box-card-text p em {
