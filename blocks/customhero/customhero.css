@@ -54,7 +54,6 @@
 }
 
 .hero-box-top {
-    margin-left: -15%;
     width: fit-content;
 }
 
@@ -72,7 +71,6 @@
 }
 
 .hero-box-bottom {
-    margin-right: -15%;
     text-align: right;
 }
 
