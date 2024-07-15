@@ -12,6 +12,10 @@
     max-width: 100vw!important;
 }
 
+.customhero .hero-image img {
+    width: 100%;
+}
+
 .hero-container {
     position: relative;
 }
@@ -60,7 +64,7 @@
     font-weight: 700;
 }
 
-.hero-box-middle p {
+.hero-box-middle h4 {
     font-size: 36px;
     color: #14847f;
     margin: 0;
