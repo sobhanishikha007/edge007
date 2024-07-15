@@ -63,11 +63,17 @@
     font-weight: 700;
 }
 
+.hero-box-middle {
+    text-align: center;
+}
+
 .hero-box-middle h4 {
+    display: inline-block;
     font-size: 36px;
     color: #14847f;
-    margin: 0;
+    margin: 0 auto;
     font-weight: bold;
+    text-align: left;
 }
 
 .hero-box-bottom {
