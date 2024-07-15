@@ -41,6 +41,10 @@ export default function decorate(block) {
     boxContent.appendChild(boxContentBottom);
     heroBox.appendChild(boxContent);
 
+    const boxDivider = document.createElement('div');
+    boxDivider.classList.add('hero-box-divider');
+    heroBox.appendChild(boxDivider);
+
     const cards = document.createElement('div');
     cards.classList.add('hero-box-cards');
 

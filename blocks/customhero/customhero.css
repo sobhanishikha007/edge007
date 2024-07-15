@@ -113,3 +113,10 @@
 .hero-box-card-text p em {
     font-style: normal;
 }
+
+.hero-box-divider {
+    background: linear-gradient(to right, rgba(123,205,151,0), rgba(123,205,151,1) 20%, rgba(224,234,36,1) 80%, rgba(224,234,36,0));
+    height: 8px;
+    margin: 0 auto;
+    width: 95%;
+}
