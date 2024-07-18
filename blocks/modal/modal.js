@@ -24,8 +24,13 @@ export async function createModal(contentNodes, fragmentUrl = null) {
   dialog.append(closeButton);
 
   if(fragmentUrl != null) {
-    dialogContent.querySelector('a[href="#no"]').addEventListener('click', () => dialog.close());
-    dialogContent.querySelector('a[href="#yes"]').href = fragmentUrl;
+    try {
+        dialogContent.querySelector('a[href="#no"]').addEventListener('click', () => dialog.close());
+        dialogContent.querySelector('a[href="#yes"]').href = fragmentUrl;
+    } catch (error) {
+        console.log(dialogContent);
+        console.log(error);
+    }
   }
 
   // close dialog on clicks outside the dialog. https://stackoverflow.com/a/70593278/79461
