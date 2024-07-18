@@ -24,17 +24,13 @@ export async function createModal(contentNodes, fragmentUrl = null) {
   dialog.append(closeButton);
 
   if(fragmentUrl != null) {
-    try {
-        dialogContent.querySelector('a[href="#close"]').addEventListener('click', () => dialog.close());
-        dialogContent.querySelector('a[href="#close"]').href = 'javascript:void(0)';
-        
-        dialogContent.querySelector('a[href="#continue"]').setAttribute('data-modal', true);
-        dialogContent.querySelector('a[href="#continue"]').addEventListener('click', () => dialog.close());
-        dialogContent.querySelector('a[href="#continue"]').href = fragmentUrl;
-    } catch (error) {
-        console.log(dialogContent);
-        console.log(error);
-    }
+    dialogContent.querySelector('a[href="#close"]').addEventListener('click', () => dialog.close());
+    dialogContent.querySelector('a[href="#close"]').href = 'javascript:void(0)';
+
+    dialogContent.querySelector('a[href="#continue"]').setAttribute('data-modal', true);
+    dialogContent.querySelector('a[href="#continue"]').setAttribute('target', '_blank');
+    dialogContent.querySelector('a[href="#continue"]').addEventListener('click', () => dialog.close());
+    dialogContent.querySelector('a[href="#continue"]').href = fragmentUrl;
   }
 
   // close dialog on clicks outside the dialog. https://stackoverflow.com/a/70593278/79461
