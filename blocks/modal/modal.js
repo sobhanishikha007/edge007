@@ -25,8 +25,8 @@ export async function createModal(contentNodes, fragmentUrl = null) {
 
   if(fragmentUrl != null) {
     try {
-        dialogContent.querySelector('a[href="#no"]').addEventListener('click', () => dialog.close());
-        dialogContent.querySelector('a[href="#yes"]').href = fragmentUrl;
+        dialogContent.querySelector('a[href="#close"]').addEventListener('click', () => dialog.close());
+        dialogContent.querySelector('a[href="#continue"]').href = fragmentUrl;
     } catch (error) {
         console.log(dialogContent);
         console.log(error);
