@@ -67,7 +67,7 @@ export async function openModal(fragmentUrl) {
   showModal();
 }
 
-export async function openWol(fragmentUrl) {
+export async function openWOL(fragmentUrl) {
   const path = '/modals/modal-wol';
 
   const fragment = await loadFragment(path);
