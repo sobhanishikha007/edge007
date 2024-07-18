@@ -7,7 +7,7 @@ import {
 // a */modals/* path  are automatically transformed into a modal. Other blocks can also use
 // the createModal() and openModal() functions.
 
-export async function createModal(contentNodes) {
+export async function createModal(contentNodes, fragmentUrl = null) {
   await loadCSS(`${window.hlx.codeBasePath}/blocks/modal/modal.css`);
   const dialog = document.createElement('dialog');
   const dialogContent = document.createElement('div');
@@ -22,6 +22,11 @@ export async function createModal(contentNodes) {
   closeButton.innerHTML = '<span class="icon icon-close"></span>';
   closeButton.addEventListener('click', () => dialog.close());
   dialog.append(closeButton);
+
+  if(fragmentUrl != null) {
+    dialogContent.querySelector('a[href="#no"]').addEventListener('click', () => dialog.close());
+    dialogContent.querySelector('a[href="#yes"]').href = fragmentUrl;
+  }
 
   // close dialog on clicks outside the dialog. https://stackoverflow.com/a/70593278/79461
   dialog.addEventListener('click', (event) => {
@@ -71,6 +76,6 @@ export async function openWOL(fragmentUrl) {
   const path = '/modals/modal-wol';
 
   const fragment = await loadFragment(path);
-  const { showModal } = await createModal(fragment.childNodes);
+  const { showModal } = await createModal(fragment.childNodes, fragmentUrl);
   showModal();
 }
