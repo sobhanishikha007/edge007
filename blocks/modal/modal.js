@@ -66,3 +66,11 @@ export async function openModal(fragmentUrl) {
   const { showModal } = await createModal(fragment.childNodes);
   showModal();
 }
+
+export async function openWol(fragmentUrl) {
+  const path = '/modals/modal-wol';
+
+  const fragment = await loadFragment(path);
+  const { showModal } = await createModal(fragment.childNodes);
+  showModal();
+}

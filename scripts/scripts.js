@@ -47,6 +47,12 @@ function autolinkModals(element) {
   element.addEventListener('click', async (e) => {
     const origin = e.target.closest('a');
 
+    if (origin && origin.href && origin.href.indexOf(document.location.href) < 0) {
+      e.preventDefault();
+      const { openModal } = await import(`${window.hlx.codeBasePath}/blocks/modal/modal.js`);
+      openWOL(origin.href);
+    }
+
     if (origin && origin.href && origin.href.includes('/modals/')) {
       e.preventDefault();
       const { openModal } = await import(`${window.hlx.codeBasePath}/blocks/modal/modal.js`);
@@ -112,7 +118,7 @@ async function loadEager(doc) {
  */
 async function loadLazy(doc) {
   autolinkModals(doc);
-  
+
   const main = doc.querySelector('main');
   await loadBlocks(main);
 

@@ -45,7 +45,7 @@ body.modal-open {
     text-overflow: clip;
     margin: 0;
     border: none;
-    padding-right: 30px;
+    padding-right: 35px;
   }
   
   .modal dialog .section {
