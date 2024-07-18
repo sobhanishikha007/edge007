@@ -49,7 +49,7 @@ function autolinkModals(element) {
 
     if (origin && origin.href && origin.href.indexOf(document.location.href) < 0) {
       e.preventDefault();
-      const { openModal } = await import(`${window.hlx.codeBasePath}/blocks/modal/modal.js`);
+      const { openWOL } = await import(`${window.hlx.codeBasePath}/blocks/modal/modal.js`);
       openWOL(origin.href);
     }
 
