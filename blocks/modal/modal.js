@@ -25,11 +25,12 @@ export async function createModal(contentNodes, fragmentUrl = null) {
 
   if(fragmentUrl != null) {
     try {
-        dialogContent.querySelector('a[href="#close"]').href = 'javascript:void(0)';
         dialogContent.querySelector('a[href="#close"]').addEventListener('click', () => dialog.close());
-        dialogContent.querySelector('a[href="#continue"]').href = fragmentUrl;
+        dialogContent.querySelector('a[href="#close"]').href = 'javascript:void(0)';
+        
         dialogContent.querySelector('a[href="#continue"]').setAttribute('data-modal', true);
         dialogContent.querySelector('a[href="#continue"]').addEventListener('click', () => dialog.close());
+        dialogContent.querySelector('a[href="#continue"]').href = fragmentUrl;
     } catch (error) {
         console.log(dialogContent);
         console.log(error);
