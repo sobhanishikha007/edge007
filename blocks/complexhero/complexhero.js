@@ -1,5 +1,4 @@
 export default function decorate(block) {
-    // block.textContent = '';
     const bgImageBlock = block.children[0];
     const leftTextBlock = block.children[1];
     const middleTextBlock = block.children[2];
@@ -16,7 +15,9 @@ export default function decorate(block) {
     container.classList.add('hero-container');
     bgImage.classList.add("hero-image");
     container.appendChild(bgImage);
-    console.log(block);
+
+    overlayImage.classList.add('hero-overlay');
+    container.appendChild(overlayImage);
     console.log(leftTextBlock);
 
     // const heroBox = document.createElement('div');
