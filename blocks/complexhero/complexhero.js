@@ -4,7 +4,7 @@ export default function decorate(block) {
     const leftTextBlock = block.children[1];
     const middleTextBlock = block.children[2];
     const rightTextBlock = block.children[3];
-    const overlayImageBlock = block.children[5];
+    const overlayImageBlock = block.children[4];
 
     const bgImage = bgImageBlock.querySelector('picture');
     const leftText = leftTextBlock.querySelector('div:last-child');
