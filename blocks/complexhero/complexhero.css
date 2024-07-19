@@ -35,3 +35,59 @@
     transform: translateX(-50%);
     width: 1180px;
 }
+
+.complexhero .hero-text h1 {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+}
+
+.complexhero .hero-text span:has(.first) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 33px;
+}
+
+.complexhero .hero-text span:has(.middle) {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 29px -17px 0 -5px;
+}
+
+.complexhero .hero-text span:has(.clearance) {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.complexhero .hero-text span .first {
+    font-style: normal;
+    color: #fff;
+    font-size: 1.09375rem;
+    letter-spacing: -0.088px;
+}
+
+.complexhero .hero-text span .second {
+    font-size: 4.5625rem;
+    font-weight: 700;
+    letter-spacing: -3.656px;
+}
+
+.complexhero .hero-text .third, .complexhero .hero-text span .middle, .complexhero .hero-text span .clearance {
+    font-family: "Upa Handwriting", serif;
+    font-style: normal;
+    color: var(--gold);
+    font-weight: 400;
+}
+
+.complexhero .hero-text span .last {
+    font-family: "Graphik Semibold", "Helvetica Neue", arial, helvetica, sans-serif;
+    font-style: normal;
+    font-size: 2rem;
+}
+
+.complexhero .hero-text span .middle {
+    font-size: 10.25rem;
+}
