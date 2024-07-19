@@ -30,6 +30,8 @@
 }
 
 .complexhero .hero-text {
+    background: url('https://main--edge007--sobhanishikha007.hlx.page/icons/black-brush-stroke.png') no-repeat center /contain;
+    background-position: 0;
     left: 50%;
     max-width: calc(100% - 40px);
     position: absolute;
