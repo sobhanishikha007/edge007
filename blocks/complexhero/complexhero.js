@@ -20,7 +20,10 @@ export default function decorate(block) {
 
     htmlText.classList.add('hero-text');
     console.log(htmlText);
-    console.log(htmlText.querySelector('p'));
+    console.log(htmlText.querySelector('p').innerText);
+    const cleanText = DOMParser.parseFromString(htmlText.querySelector('p').innerText, 'text/html');
+    htmlText.innerText = '';
+    htmlText.appendChild(cleanText);
     container.appendChild(htmlText);
 
     overlayImage.classList.add('hero-overlay');
