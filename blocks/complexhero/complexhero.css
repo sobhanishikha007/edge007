@@ -21,15 +21,17 @@
 }
 
 .complexhero .hero-overlay {
-    position: absolute;
     bottom: 0;
+    pointer-events: none;
+    position: absolute;
     width: 100%;
 }
 
 .complexhero .hero-text {
     left: 50%;
-    max-width: 1180px;
+    max-width: calc(100% - 40px);
     position: absolute;
-    top: 50%;
+    top: 20%;
     transform: translateX(-50%);
+    width: 1180px;
 }

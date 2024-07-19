@@ -19,6 +19,8 @@ export default function decorate(block) {
     container.appendChild(bgImage);
 
     htmlText.classList.add('hero-text');
+    console.log(htmlText);
+    console.log(htmlText.querySelector(p));
     container.appendChild(htmlText);
 
     overlayImage.classList.add('hero-overlay');
