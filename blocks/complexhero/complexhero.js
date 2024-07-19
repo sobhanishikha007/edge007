@@ -21,8 +21,7 @@ export default function decorate(block) {
     htmlText.classList.add('hero-text');
     console.log(htmlText);
     console.log(htmlText.querySelector('p').innerText);
-    const parser = new DOMParser();
-    const cleanText = parser.parseFromString(htmlText.querySelector('p').innerText, 'text/html');
+    const cleanText = htmlText.querySelector('p').innerText;
     htmlText.innerText = '';
     htmlText.appendChild(cleanText);
     container.appendChild(htmlText);
