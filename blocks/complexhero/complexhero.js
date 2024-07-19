@@ -16,7 +16,7 @@ export default function decorate(block) {
     container.classList.add('hero-container');
     bgImage.classList.add("hero-image");
     container.appendChild(bgImage);
-
+    console.log(block);
     console.log(leftTextBlock);
 
     // const heroBox = document.createElement('div');
