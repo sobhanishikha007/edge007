@@ -1,7 +1,5 @@
 .complexhero-container {
     padding: 0!important;
-    height: 800px;
-    overflow: hidden;
 }
 
 .complexhero-container p {
@@ -10,6 +8,8 @@
 
 .complexhero-wrapper {
     max-width: 100vw!important;
+    height: 800px;
+    overflow: hidden;
 }
 
 .complexhero .hero-image img {
