@@ -1,11 +1,13 @@
 export default function decorate(block) {
     const bgImageBlock = block.children[0];
-    const leftTextBlock = block.children[1];
-    const middleTextBlock = block.children[2];
-    const rightTextBlock = block.children[3];
-    const overlayImageBlock = block.children[4];
+    const htmlTextBlock = block.children[1];
+    const leftTextBlock = block.children[2];
+    const middleTextBlock = block.children[3];
+    const rightTextBlock = block.children[4];
+    const overlayImageBlock = block.children[5];
 
     const bgImage = bgImageBlock.querySelector('picture');
+    const htmlText = htmlTextBlock.querySelector('div:last-child');
     const leftText = leftTextBlock.querySelector('div:last-child');
     const middleText = middleTextBlock.querySelector('div:last-child');
     const rightText = rightTextBlock.querySelector('div:last-child');
@@ -15,6 +17,9 @@ export default function decorate(block) {
     container.classList.add('hero-container');
     bgImage.classList.add("hero-image");
     container.appendChild(bgImage);
+
+    htmlText.classList.add('hero-text');
+    container.appendChild(htmlText);
 
     overlayImage.classList.add('hero-overlay');
     container.appendChild(overlayImage);
