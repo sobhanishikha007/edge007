@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
 .complexhero-container {
     padding: 0!important;
 }
@@ -37,6 +39,7 @@
 }
 
 .complexhero .hero-text h1 {
+    color: #fff;
     display: flex;
     flex-direction: row;
     margin: 0;
@@ -64,7 +67,6 @@
 
 .complexhero .hero-text span .first {
     font-style: normal;
-    color: #fff;
     font-size: 1.09375rem;
     letter-spacing: -0.088px;
 }
@@ -75,10 +77,10 @@
     letter-spacing: -3.656px;
 }
 
-.complexhero .hero-text .third, .complexhero .hero-text span .middle, .complexhero .hero-text span .clearance {
-    font-family: "Upa Handwriting", serif;
+.complexhero .hero-text span .third, .complexhero .hero-text span .middle, .complexhero .hero-text span .clearance {
+    font-family: "Pacifico", serif;
     font-style: normal;
-    color: var(--gold);
+    color: goldenrod;
     font-weight: 400;
 }
 
