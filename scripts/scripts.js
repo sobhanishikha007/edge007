@@ -65,12 +65,10 @@ function autolinkModals(element) {
   });
 
   const documentLinks = document.querySelectorAll('a');
-  console.log(documentLinks);
   
   for(let i = 0; i < documentLinks.length; i++){
     const link = documentLinks[i];
     if (link && link.href && link.href.includes('/modals/') && link.href.includes('forced')) {
-      console.log("Forced Modal:" + link);
       openForcedModal(link.href);
     }
   }

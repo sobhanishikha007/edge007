@@ -23,11 +23,14 @@ export async function createModal(contentNodes, fragmentUrl = null) {
   closeButton.addEventListener('click', () => dialog.close());
   dialog.append(closeButton);
 
-  if(fragmentUrl != null) {
+
+  if(dialogContent.querySelector('a[href="#close"]') != null) {
     dialogContent.querySelector('a[href="#close"]').setAttribute('data-modal', true);
     dialogContent.querySelector('a[href="#close"]').addEventListener('click', () => dialog.close());
     dialogContent.querySelector('a[href="#close"]').href = 'javascript:void(0)';
+  }
 
+  if(fragmentUrl != null) {
     dialogContent.querySelector('a[href="#continue"]').setAttribute('data-modal', true);
     dialogContent.querySelector('a[href="#continue"]').setAttribute('target', '_blank');
     dialogContent.querySelector('a[href="#continue"]').addEventListener('click', () => dialog.close());
@@ -69,7 +72,6 @@ export async function createModal(contentNodes, fragmentUrl = null) {
 }
 
 export async function openModal(fragmentUrl) {
-  console.log('Opening modal:' + fragmentUrl);
   const path = fragmentUrl.startsWith('http')
     ? new URL(fragmentUrl, window.location).pathname
     : fragmentUrl;
