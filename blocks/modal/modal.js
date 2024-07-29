@@ -69,6 +69,7 @@ export async function createModal(contentNodes, fragmentUrl = null) {
 }
 
 export async function openModal(fragmentUrl) {
+  console.log('Opening modal:' + fragmentUrl);
   const path = fragmentUrl.startsWith('http')
     ? new URL(fragmentUrl, window.location).pathname
     : fragmentUrl;

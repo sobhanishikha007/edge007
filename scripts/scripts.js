@@ -69,6 +69,7 @@ function autolinkModals(element) {
     for(let i = 0; i < documentLinks.length; i++){
       let link = documentLinks[i];
       if (link && link.href && link.href.includes('/modals/') && link.href.includes('forced')) {
+        console.log("Forced Modal:" + link);
         const { openModal } = await import(`${window.hlx.codeBasePath}/blocks/modal/modal.js`);
         openModal(link.href);
       }
