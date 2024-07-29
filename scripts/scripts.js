@@ -43,6 +43,10 @@ async function loadFonts() {
   }
 }
 
+
+/**
+ * opens modal links in modal window
+ */
 function autolinkModals(element) {
   element.addEventListener('click', async (e) => {
     const origin = e.target.closest('a');
@@ -59,6 +63,15 @@ function autolinkModals(element) {
       openModal(origin.href);
     }
   });
+
+  const documentLinks = element.querySelectorAll(a);
+  for(let i = 0; i < documentLinks.length; i++){
+    let link = documentLinks.length[i]
+    if (link && link.href && link.href.includes('/modals/') && link.href.includes('forced')) {
+      const { openModal } = await import(`${window.hlx.codeBasePath}/blocks/modal/modal.js`);
+      openModal(link.href);
+    }
+  }
 }
 
 /**
@@ -81,8 +94,6 @@ function buildAutoBlocks(main) {
 // eslint-disable-next-line import/prefer-default-export
 export function decorateMain(main) {
   // hopefully forward compatible button decoration
-  const mainContent = main;
-  console.log(mainContent);
   decorateButtons(main);
   decorateIcons(main);
   buildAutoBlocks(main);
