@@ -65,7 +65,7 @@ function autolinkModals(element) {
   });
 
   const documentLinks = element.querySelectorAll('a');
-  async (documentLinks) {
+  async (documentLinks) => {
     for(let i = 0; i < documentLinks.length; i++){
       let link = documentLinks[i];
       if (link && link.href && link.href.includes('/modals/') && link.href.includes('forced')) {
