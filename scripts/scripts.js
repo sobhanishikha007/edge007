@@ -48,8 +48,6 @@ async function loadFonts() {
  * opens modal links in modal window
  */
 function autolinkModals(element) {
-  const { openModal };
-
   element.addEventListener('click', async (e) => {
     const origin = e.target.closest('a');
 
@@ -61,17 +59,17 @@ function autolinkModals(element) {
 
     if (origin && origin.href && origin.href.includes('/modals/')) {
       e.preventDefault();
-      openModal = await import(`${window.hlx.codeBasePath}/blocks/modal/modal.js`);
+      const { openModal } = await import(`${window.hlx.codeBasePath}/blocks/modal/modal.js`);
       openModal(origin.href);
     }
   });
 
   const documentLinks = element.querySelectorAll(a);
   for(let i = 0; i < documentLinks.length; i++){
-    let link = documentLinks.length[i]
+    const link = documentLinks.length[i]
     if (link && link.href && link.href.includes('/modals/') && link.href.includes('forced')) {
-      openModal = await import(`${window.hlx.codeBasePath}/blocks/modal/modal.js`);
-      openModal(link.href);
+      const { forcedModal } = await import(`${window.hlx.codeBasePath}/blocks/modal/modal.js`);
+      forcedModal(link.href);
     }
   }
 }
