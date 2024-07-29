@@ -66,17 +66,22 @@ function autolinkModals(element) {
 
   const documentLinks = document.querySelectorAll('a');
   console.log(documentLinks);
-  async () => {
-    console.log('async: '+documentLinks);
-    for(let i = 0; i < documentLinks.length; i++){
-      let link = documentLinks[i];
-      if (link && link.href && link.href.includes('/modals/') && link.href.includes('forced')) {
-        console.log("Forced Modal:" + link);
-        const { openModal } = await import(`${window.hlx.codeBasePath}/blocks/modal/modal.js`);
-        openModal(link.href);
-      }
+  
+  for(let i = 0; i < documentLinks.length; i++){
+    const link = documentLinks[i];
+    if (link && link.href && link.href.includes('/modals/') && link.href.includes('forced')) {
+      console.log("Forced Modal:" + link);
+      openForcedModal(link.href);
     }
   }
+}
+
+/**
+ * force opens modal on page load
+ */
+async function openForcedModal (fragmentUrl) {
+  const { openModal } = await import(`${window.hlx.codeBasePath}/blocks/modal/modal.js`);
+  openModal(fragmentUrl);
 }
 
 /**
