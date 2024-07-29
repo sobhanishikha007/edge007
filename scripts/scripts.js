@@ -66,10 +66,10 @@ function autolinkModals(element) {
 
   const documentLinks = element.querySelectorAll(a);
   for(let i = 0; i < documentLinks.length; i++){
-    const link = documentLinks.length[i]
+    let link = documentLinks.length[i]
     if (link && link.href && link.href.includes('/modals/') && link.href.includes('forced')) {
-      const { forcedModal } = await import(`${window.hlx.codeBasePath}/blocks/modal/modal.js`);
-      forcedModal(link.href);
+      const { openModal } = import(`${window.hlx.codeBasePath}/blocks/modal/modal.js`);
+      openModal(link.href);
     }
   }
 }
