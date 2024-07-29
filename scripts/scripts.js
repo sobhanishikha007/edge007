@@ -65,11 +65,13 @@ function autolinkModals(element) {
   });
 
   const documentLinks = element.querySelectorAll('a');
-  for(let i = 0; i < documentLinks.length; i++){
-    let link = documentLinks[i];
-    if (link && link.href && link.href.includes('/modals/') && link.href.includes('forced')) {
-      const { openModal } = import(`${window.hlx.codeBasePath}/blocks/modal/modal.js`);
-      openModal(link.href);
+  async (documentLinks) {
+    for(let i = 0; i < documentLinks.length; i++){
+      let link = documentLinks[i];
+      if (link && link.href && link.href.includes('/modals/') && link.href.includes('forced')) {
+        const { openModal } = await import(`${window.hlx.codeBasePath}/blocks/modal/modal.js`);
+        openModal(link.href);
+      }
     }
   }
 }
