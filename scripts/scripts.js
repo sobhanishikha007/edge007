@@ -122,7 +122,7 @@ async function loadEager(doc) {
   const isi = doc.createElement('div');
   isi.classList.add('isi');
   doc.querySelector('body').appendChild(isi);
-  //doc.querySelector('body').appendChild( doc.querySelector('footer'));
+  doc.querySelector('body').appendChild( doc.querySelector('footer'));
 
   const main = doc.querySelector('main');
   if (main) {
