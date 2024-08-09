@@ -659,6 +659,18 @@ async function loadHeader(header) {
 }
 
 /**
+ * Loads a block named 'isi' into isi
+ * @param isi isi element
+ * @returns {Promise}
+ */
+async function loadIsi(isi) {
+  const isiBlock = buildBlock('isi', '');
+  isi.append(isiBlock);
+  decorateBlock(isiBlock);
+  return loadBlock(isiBlock);
+}
+
+/**
  * Loads a block named 'footer' into footer
  * @param footer footer element
  * @returns {Promise}
@@ -710,6 +722,7 @@ export {
   loadBlocks,
   loadCSS,
   loadFooter,
+  loadIsi,
   loadHeader,
   loadScript,
   readBlockConfig,

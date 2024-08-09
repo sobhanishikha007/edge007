@@ -2,6 +2,7 @@ import {
   sampleRUM,
   buildBlock,
   loadHeader,
+  loadIsi,
   loadFooter,
   decorateButtons,
   decorateIcons,
@@ -66,8 +67,8 @@ function autolinkModals(element) {
 
   const documentLinks = document.querySelectorAll('a');
   
-  for(let i = 0; i < documentLinks.length; i++){
-    const link = documentLinks[i];
+  for(const element of documentLinks){
+    const link = element;
     if (link && link.href && link.href.includes('/modals/') && link.href.includes('forced')) {
       openForcedModal(link.href);
       link.remove();
@@ -117,6 +118,11 @@ export function decorateMain(main) {
 async function loadEager(doc) {
   document.documentElement.lang = 'en';
   decorateTemplateAndTheme();
+
+  const isi = doc.createElement('div');
+  isi.classList.add('isi');
+  doc.appendChild(isi);
+
   const main = doc.querySelector('main');
   if (main) {
     decorateMain(main);
@@ -149,6 +155,7 @@ async function loadLazy(doc) {
   if (hash && element) element.scrollIntoView();
 
   loadHeader(doc.querySelector('header'));
+  loadIsi(doc.querySelector('.isi'));
   loadFooter(doc.querySelector('footer'));
 
   loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
