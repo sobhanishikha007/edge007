@@ -71,7 +71,7 @@ function autolinkModals(element) {
     const link = element;
     if (link && link.href && link.href.includes('/modals/') && link.href.includes('forced')) {
       openForcedModal(link.href);
-      link.remove();
+      link.parentElement.remove();
     }
   }
 }
