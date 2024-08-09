@@ -30,9 +30,8 @@ export default async function decorate(block) {
   block.append(safety);
 
   const scrollIsi = document.querySelector(".isi");
-  
   document.addEventListener("scroll", (event) => {
-    if(window.scrollY > scrollIsi.offsetTop + window.innerHeight) {
+    if(window.scrollY > scrollIsi.offsetTop - window.innerHeight) {
       document.querySelector('.safety-bar').classList.add('.safety-bar-hidden');
     }else {
       document.querySelector('.safety-bar').classList.remove('.safety-bar-hidden');
