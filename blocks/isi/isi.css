@@ -9,6 +9,20 @@
   font-size:  var(--body-font-size-s);
 }
 
+.safety-bar {
+  background: white;
+  border-top: 1px solid black;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  text-align: left;
+  width: 100%;
+}
+
 .safety-bar table {
   border: none;
+}
+
+.safety-bar table th:first-child {
+  width: 60%;
 }
