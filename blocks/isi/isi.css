@@ -1,17 +1,10 @@
-.isi {
+.isi-wrapper {
   padding: 2rem;
   font-size: var(--body-font-size-s);
-}
-
-.isi {
   max-width: 1200px;
   margin: auto;
 }
 
 .isi h2 {
   font-size:  var(--body-font-size-s);
-}
-
-.isi p {
-  margin: 0;
 }
