@@ -8,10 +8,10 @@ import { loadFragment } from '../fragment/fragment.js';
 export default async function decorate(block) {
   // load isi as fragment
   const isiMeta = getMetadata('isi');
-  const isiPath = fisiMeta ? new URL(isiMeta, window.location).pathname : '/isi';
+  const isiPath = isiMeta ? new URL(isiMeta, window.location).pathname : '/isi';
   const fragment = await loadFragment(isiPath);
 
-  // decorate footer DOM
+  // decorate isi DOM
   block.textContent = '';
   const isi = document.createElement('div');
   while (fragment.firstElementChild) isi.append(fragment.firstElementChild);
