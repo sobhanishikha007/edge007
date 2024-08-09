@@ -8,3 +8,7 @@
 .isi h2 {
   font-size:  var(--body-font-size-s);
 }
+
+.safety-bar table {
+  border: none;
+}
